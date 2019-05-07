@@ -1,0 +1,11 @@
+# Exclude
+/*
+# Include
+!/gradle
+!/src
+!/.gitignore
+!/build.gradle
+!/gradle.properties
+!/gradlew
+!/gradlew.bat
+!/settings.gradle
