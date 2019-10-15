@@ -1,11 +1,19 @@
-# Exclude
-/*
-# Include
-!/gradle
-!/src
-!/.gitignore
-!/build.gradle
-!/gradle.properties
-!/gradlew
-!/gradlew.bat
-!/settings.gradle
+# eclipse
+.classpath/
+.metadata/
+.project/
+.settings/
+*.launch
+bin/
+eclipse/
+
+# idea
+.idea/
+*.ipr
+*.iws
+out/
+
+# gradle
+.gradle/
+build/
+run/

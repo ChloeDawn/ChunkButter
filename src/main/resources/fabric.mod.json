@@ -3,27 +3,27 @@
   "id": "chunkbutter",
   "name": "Chunk Butter",
   "version": "$version",
-  "description": "Smoothens client chunk rebuilding",
+  "description": "Smooths client chunk rebuilding",
   "environment": "client",
-  "license": "Apache 2.0",
+  "license": "Apache License 2.0",
   "icon": "pack.png",
-  "requires": {
-    "fabricloader": ">=0.4.1 <0.5.0"
+  "depends": {
+    "fabricloader": ">=0.6.3"
   },
   "mixins": [
     "mixins/chunkbutter/mixins.json"
   ],
   "authors": [
     {
-      "name": "InsomniaKitten",
+      "name": "Chloe Dawn",
       "contact": {
-        "homepage": "https://git.io/vXoUn"
+        "homepage": "https://git.io/Jen3g"
       }
     }
   ],
   "contact": {
-    "homepage": "https://git.io/fjcZa",
-    "sources": "https://git.io/fjcZa",
-    "issues": "https://git.io/fjcZw"
+    "homepage": "https://git.io/Je89Y",
+    "sources": "https://git.io/Je89Y",
+    "issues": "https://git.io/Je89O"
   }
 }

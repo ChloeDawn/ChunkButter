@@ -5,7 +5,7 @@
   "required": true,
   "priority": -1000,
   "mixinPriority": -1000,
-  "package": "io.github.sleeplessdevelopment.chunkbutter.mixin",
+  "package": "io.github.chloedawn.chunkbutter",
   "client": [
     "ChunkRendererMixin",
     "WorldRendererMixin"
