@@ -5,9 +5,10 @@
   "required": true,
   "priority": -1000,
   "mixinPriority": -1000,
-  "package": "io.github.chloedawn.chunkbutter",
+  "package": "io.github.chloedawn.chunkbutter.mixin",
   "client": [
     "ChunkRendererMixin",
+    "VideoOptionsMixin",
     "WorldRendererMixin"
   ],
   "refmap": "$refmap",

@@ -8,7 +8,13 @@
   "license": "Apache License 2.0",
   "icon": "pack.png",
   "depends": {
-    "fabricloader": ">=0.6.3"
+    "fabricloader": ">=0.6.3",
+    "fabric-resource-loader-v0": ">=0.1.3"
+  },
+  "entrypoints": {
+    "client": [
+      "io.github.chloedawn.chunkbutter.ChunkButter::load"
+    ]
   },
   "mixins": [
     "mixins/chunkbutter/mixins.json"
