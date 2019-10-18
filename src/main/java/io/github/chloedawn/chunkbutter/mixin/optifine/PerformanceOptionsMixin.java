@@ -30,8 +30,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Pseudo
 @Mixin(targets = "net.optifine.gui.GuiPerformanceSettingsOF", remap = false)
 abstract class PerformanceOptionsMixin extends Screen {
-  @Shadow
-  private static Option[] enumOptions;
+  @Shadow private static Option[] enumOptions;
 
   PerformanceOptionsMixin() {
     super(null);
