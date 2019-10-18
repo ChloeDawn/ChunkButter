@@ -9,8 +9,7 @@
   "client": [
     "ChunkRendererMixin",
     "WorldRendererMixin",
-    "VideoOptionsMixin",
-    "optifine.PerformanceOptionsMixin"
+    "VideoOptionsMixin"
   ],
   "refmap": "$refmap",
   "injectors": {
