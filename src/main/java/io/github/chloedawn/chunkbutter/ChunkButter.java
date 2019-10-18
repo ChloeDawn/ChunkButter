@@ -33,8 +33,8 @@ import java.util.Properties;
 
 public final class ChunkButter {
   public static final BooleanOption OPTION = new BooleanOption("options.chunkbutter", o -> isEnabled(), (o, v) -> setEnabled(v));
-  public static final Logger LOGGER = LogManager.getLogger();
 
+  private static final Logger LOGGER = LogManager.getLogger();
   private static final Path CHUNKBUTTER_TXT = Paths.get("chunkbutter.txt");
   private static final String ENABLED = "enabled";
 
