@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "chunkbutter",
+  "id": "zchunkbutter",
   "name": "Chunk Butter",
   "version": "$version",
   "description": "Smooths client chunk rebuilding",
@@ -31,5 +31,10 @@
     "homepage": "https://git.io/Je89Y",
     "sources": "https://git.io/Je89Y",
     "issues": "https://git.io/Je89O"
+  },
+  "custom": {
+    "mm:early_risers": [
+      "io.github.chloedawn.chunkbutter.optifine.OptiFineMixinLoader"
+    ]
   }
 }

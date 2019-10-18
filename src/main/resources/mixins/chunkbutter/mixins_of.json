@@ -7,9 +7,6 @@
   "mixinPriority": -1000,
   "package": "io.github.chloedawn.chunkbutter.mixin",
   "client": [
-    "ChunkRendererMixin",
-    "WorldRendererMixin",
-    "VideoOptionsMixin",
     "optifine.PerformanceOptionsMixin"
   ],
   "refmap": "$refmap",
