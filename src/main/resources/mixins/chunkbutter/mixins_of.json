@@ -5,9 +5,9 @@
   "required": true,
   "priority": -1000,
   "mixinPriority": -1000,
-  "package": "io.github.chloedawn.chunkbutter.mixin",
+  "package": "io.github.chloedawn.chunkbutter.mixin.optifine",
   "client": [
-    "optifine.PerformanceOptionsMixin"
+    "PerformanceOptionsMixin"
   ],
   "refmap": "$refmap",
   "injectors": {
