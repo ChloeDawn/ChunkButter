@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.github.chloedawn.chunkbutter.mixin.optifine;
+package io.github.chloedawn.chunkbutter.optifine.mixin;
 
 import io.github.chloedawn.chunkbutter.ChunkButter;
 import net.minecraft.client.MinecraftClient;

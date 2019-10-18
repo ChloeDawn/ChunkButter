@@ -5,7 +5,7 @@
   "required": true,
   "priority": -1000,
   "mixinPriority": -1000,
-  "package": "io.github.chloedawn.chunkbutter.mixin.optifine",
+  "package": "io.github.chloedawn.chunkbutter.optifine.mixin",
   "client": [
     "PerformanceOptionsMixin"
   ],
