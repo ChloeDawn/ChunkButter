@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "id": "zchunkbutter",
+  "id": "chunkbutter",
   "name": "Chunk Butter",
   "version": "$version",
   "description": "Smooths client chunk rebuilding",
   "environment": "client",
-  "license": "Apache License 2.0",
+  "license": "Apache-2.0",
   "icon": "pack.png",
   "depends": {
     "fabricloader": ">=0.6.3",
