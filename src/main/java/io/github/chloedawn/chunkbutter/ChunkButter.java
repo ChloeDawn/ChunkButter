@@ -18,6 +18,7 @@ package io.github.chloedawn.chunkbutter;
 
 import com.google.common.base.Preconditions;
 import net.minecraft.client.options.BooleanOption;
+import net.minecraft.client.options.Option;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.Contract;
@@ -32,7 +33,7 @@ import java.nio.file.Paths;
 import java.util.Properties;
 
 public final class ChunkButter {
-  public static final BooleanOption OPTION = new BooleanOption("options.chunkbutter", o -> isEnabled(), (o, v) -> setEnabled(v));
+  private static final BooleanOption OPTION = new BooleanOption("options.chunkbutter", o -> isEnabled(), (o, v) -> setEnabled(v));
 
   private static final Logger LOGGER = LogManager.getLogger();
   private static final Path CHUNKBUTTER_TXT = Paths.get("chunkbutter.txt");
@@ -42,6 +43,11 @@ public final class ChunkButter {
   private static boolean enabled = true;
 
   private ChunkButter() {
+  }
+
+  @Contract(pure = true)
+  public static Option getOption() {
+    return OPTION;
   }
 
   @Contract(pure = true)

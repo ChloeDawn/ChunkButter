@@ -35,7 +35,7 @@ abstract class VideoOptionsMixin extends Screen {
   private Option[] chunkbutter$appendOption(final Option[] options) {
     final Option[] newOptions = new Option[options.length + 1];
     System.arraycopy(options, 0, newOptions, 0, options.length);
-    newOptions[options.length] = ChunkButter.OPTION;
+    newOptions[options.length] = ChunkButter.getOption();
     return newOptions;
   }
 }

@@ -41,6 +41,6 @@ abstract class PerformanceOptionsMixin extends Screen {
     final int i = enumOptions.length;
     final int x = this.width / 2 - 155 + i % 2 * 160;
     final int y = this.height / 6 + 21 * (i / 2) - 12;
-    this.addButton(ChunkButter.OPTION.createButton(MinecraftClient.getInstance().options, x, y, 150));
+    this.addButton(ChunkButter.getOption().createButton(MinecraftClient.getInstance().options, x, y, 150));
   }
 }
