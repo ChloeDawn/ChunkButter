@@ -47,17 +47,18 @@ public final class ChunkButter {
 
   @Contract(pure = true)
   public static Option getOption() {
+    checkLoaded();
     return OPTION;
   }
 
   @Contract(pure = true)
   public static boolean isEnabled() {
-    Preconditions.checkState(loaded, "Not loaded");
+    checkLoaded();
     return enabled;
   }
 
   private static void setEnabled(final boolean value) {
-    Preconditions.checkState(loaded, "Not loaded");
+    checkLoaded();
     Preconditions.checkState(enabled != value, value ? "Already enabled" : "Already disabled");
     enabled = value;
     writeProperties(CHUNKBUTTER_TXT);
@@ -68,6 +69,10 @@ public final class ChunkButter {
     Preconditions.checkState(!loaded, "Already loaded");
     readProperties(CHUNKBUTTER_TXT);
     loaded = true;
+  }
+  
+  private static void checkLoaded() {
+    Preconditions.checkState(loaded, "Not loaded");
   }
 
   private static void readProperties(final Path file) {
