@@ -36,9 +36,9 @@ public final class ChunkButter {
 	private static final Logger LOGGER = LogManager.getLogger();
 	private static final Path CHUNKBUTTER_TXT = Paths.get("chunkbutter.txt");
 	private static final String ENABLED = "enabled";
+
 	private static boolean loaded = false;
 	private static boolean enabled = true;
-	private static final BooleanOption OPTION = new BooleanOption("options.chunkbutter", o -> isEnabled(), (o, v) -> setEnabled(v));
 
 	private ChunkButter() {
 	}
@@ -46,7 +46,7 @@ public final class ChunkButter {
 	@Contract(pure = true)
 	public static Option getOption() {
 		checkLoaded();
-		return OPTION;
+		return OptionHolder.OPTION;
 	}
 
 	@Contract(pure = true)
@@ -104,5 +104,9 @@ public final class ChunkButter {
 		} catch (final IOException e) {
 			throw new RuntimeException("Writing properties to " + CHUNKBUTTER_TXT, e);
 		}
+	}
+
+	private static final class OptionHolder {
+		private static final BooleanOption OPTION = new BooleanOption("options.chunkbutter", o -> isEnabled(), (o, v) -> setEnabled(v));
 	}
 }
