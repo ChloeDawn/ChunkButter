@@ -59,13 +59,13 @@ public final class ChunkButter {
 		checkLoaded();
 		Preconditions.checkState(enabled != value, value ? "Already enabled" : "Already disabled");
 		enabled = value;
-		writeProperties(CHUNKBUTTER_TXT);
+		writePropertiesToFile();
 	}
 
 	@Deprecated
 	public static void load() {
 		Preconditions.checkState(!loaded, "Already loaded");
-		readProperties(CHUNKBUTTER_TXT);
+		readPropertiesFromFile();
 		loaded = true;
 	}
 
@@ -73,36 +73,36 @@ public final class ChunkButter {
 		Preconditions.checkState(loaded, "Not loaded");
 	}
 
-	private static void readProperties(final Path file) {
-		LOGGER.debug("Reading properties from {}", file);
+	private static void readPropertiesFromFile() {
+		LOGGER.debug("Reading properties from {}", CHUNKBUTTER_TXT);
 
 		final Properties properties = new Properties();
 
-		try (final Reader reader = Files.newBufferedReader(file)) {
+		try (final Reader reader = Files.newBufferedReader(CHUNKBUTTER_TXT)) {
 			properties.load(reader);
 		} catch (final NoSuchFileException e) {
-			writeProperties(file);
+			writePropertiesToFile();
 		} catch (final IOException e) {
-			throw new RuntimeException("Reading properties from " + file, e);
+			throw new RuntimeException("Reading properties from " + CHUNKBUTTER_TXT, e);
 		} catch (final IllegalArgumentException e) {
-			LOGGER.error("Malformed properties in {}", file, e);
-			writeProperties(file);
+			LOGGER.error("Malformed properties in {}", CHUNKBUTTER_TXT, e);
+			writePropertiesToFile();
 		}
 
 		enabled = Boolean.parseBoolean(properties.getProperty(ENABLED, "true"));
 	}
 
-	private static void writeProperties(final Path file) {
-		LOGGER.debug("Writing properties to {}", file);
+	private static void writePropertiesToFile() {
+		LOGGER.debug("Writing properties to {}", CHUNKBUTTER_TXT);
 
 		final Properties properties = new Properties();
 
 		properties.setProperty(ENABLED, Boolean.toString(enabled));
 
-		try (final Writer writer = Files.newBufferedWriter(file)) {
+		try (final Writer writer = Files.newBufferedWriter(CHUNKBUTTER_TXT)) {
 			properties.store(writer, null);
 		} catch (final IOException e) {
-			throw new RuntimeException("Writing properties to " + file, e);
+			throw new RuntimeException("Writing properties to " + CHUNKBUTTER_TXT, e);
 		}
 	}
 }
