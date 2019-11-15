@@ -20,6 +20,7 @@ import io.github.chloedawn.chunkbutter.ChunkButter;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.options.Option;
+import org.jetbrains.annotations.Contract;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Pseudo;
 import org.spongepowered.asm.mixin.Shadow;
@@ -36,6 +37,7 @@ abstract class PerformanceOptionsMixin extends Screen {
 		super(null);
 	}
 
+	@Contract(mutates = "this")
 	@Inject(method = "Lnet/optifine/gui/GuiPerformanceSettingsOF;init()V", at = @At("TAIL"))
 	private void chunkbutter$appendOption(final CallbackInfo ci) {
 		final int i = enumOptions.length;

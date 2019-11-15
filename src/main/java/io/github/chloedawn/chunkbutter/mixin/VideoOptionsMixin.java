@@ -20,6 +20,7 @@ import io.github.chloedawn.chunkbutter.ChunkButter;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.VideoOptionsScreen;
 import net.minecraft.client.options.Option;
+import org.jetbrains.annotations.Contract;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
@@ -31,6 +32,7 @@ abstract class VideoOptionsMixin extends Screen {
 	}
 
 	// TODO Replace lack of requirement with @Group implementation once cross-mixin groups are supported
+	@Contract("_ -> new")
 	@ModifyArg(method = "init", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/widget/ButtonListWidget;addAll([Lnet/minecraft/client/options/Option;)V"), require = 0)
 	private Option[] chunkbutter$appendOption(final Option[] options) {
 		final Option[] newOptions = new Option[options.length + 1];
