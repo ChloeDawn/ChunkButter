@@ -26,16 +26,16 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 
 @Mixin(VideoOptionsScreen.class)
 abstract class VideoOptionsMixin extends Screen {
-  VideoOptionsMixin() {
-    super(null);
-  }
+	VideoOptionsMixin() {
+		super(null);
+	}
 
-  // TODO Replace lack of requirement with @Group implementation once cross-mixin groups are supported
-  @ModifyArg(method = "init", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/widget/ButtonListWidget;addAll([Lnet/minecraft/client/options/Option;)V"), require = 0)
-  private Option[] chunkbutter$appendOption(final Option[] options) {
-    final Option[] newOptions = new Option[options.length + 1];
-    System.arraycopy(options, 0, newOptions, 0, options.length);
-    newOptions[options.length] = ChunkButter.getOption();
-    return newOptions;
-  }
+	// TODO Replace lack of requirement with @Group implementation once cross-mixin groups are supported
+	@ModifyArg(method = "init", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/widget/ButtonListWidget;addAll([Lnet/minecraft/client/options/Option;)V"), require = 0)
+	private Option[] chunkbutter$appendOption(final Option[] options) {
+		final Option[] newOptions = new Option[options.length + 1];
+		System.arraycopy(options, 0, newOptions, 0, options.length);
+		newOptions[options.length] = ChunkButter.getOption();
+		return newOptions;
+	}
 }

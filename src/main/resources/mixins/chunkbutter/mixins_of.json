@@ -1,20 +1,20 @@
 {
-  "target": "@environment(DEFAULT)",
-  "minVersion": "0.7.11",
-  "compatibilityLevel": "JAVA_8",
-  "required": true,
-  "priority": -1000,
-  "mixinPriority": -1000,
-  "package": "io.github.chloedawn.chunkbutter.optifine.mixin",
-  "client": [
-    "PerformanceOptionsMixin"
-  ],
-  "refmap": "$refmap",
-  "injectors": {
-    "defaultRequire": 1
-  },
-  "overwrites": {
-    "conformVisibility": true,
-    "requireAnnotations": true
-  }
+	"target": "@environment(DEFAULT)",
+	"minVersion": "0.7.11",
+	"compatibilityLevel": "JAVA_8",
+	"required": true,
+	"priority": -1000,
+	"mixinPriority": -1000,
+	"package": "io.github.chloedawn.chunkbutter.optifine.mixin",
+	"client": [
+		"PerformanceOptionsMixin"
+	],
+	"refmap": "$refmap",
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"conformVisibility": true,
+		"requireAnnotations": true
+	}
 }

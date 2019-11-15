@@ -27,9 +27,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(ChunkRenderer.class)
 abstract class ChunkRendererMixin {
-  @Contract(mutates = "param")
-  @Inject(method = "shouldRebuildOnClientThread", at = @At("RETURN"), cancellable = true)
-  private void chunkbutter$forceRebuildOffMainThread(final @NotNull CallbackInfoReturnable<Boolean> cir) {
-    if (ChunkButter.isEnabled()) cir.setReturnValue(false);
-  }
+	@Contract(mutates = "param")
+	@Inject(method = "shouldRebuildOnClientThread", at = @At("RETURN"), cancellable = true)
+	private void chunkbutter$forceRebuildOffMainThread(final @NotNull CallbackInfoReturnable<Boolean> cir) {
+		if (ChunkButter.isEnabled()) cir.setReturnValue(false);
+	}
 }

@@ -23,17 +23,17 @@ import org.spongepowered.asm.mixin.Mixins;
 
 @Deprecated
 public final class OptiFineMixinLoader implements Runnable {
-  private static final Logger LOGGER = LogManager.getLogger();
+	private static final Logger LOGGER = LogManager.getLogger();
 
-  @Override
-  public void run() {
-    LOGGER.info("The early rising bird catches the classpath loading worm");
-    Mixins.addConfiguration("mixins/chunkbutter/mixins_of.json");
-  }
+	@Override
+	public void run() {
+		LOGGER.info("The early rising bird catches the classpath loading worm");
+		Mixins.addConfiguration("mixins/chunkbutter/mixins_of.json");
+	}
 
-  @Override
-  @Contract(pure = true)
-  public String toString() {
-    return "ChunkButterOptifineMixinLoader";
-  }
+	@Override
+	@Contract(pure = true)
+	public String toString() {
+		return "ChunkButterOptifineMixinLoader";
+	}
 }

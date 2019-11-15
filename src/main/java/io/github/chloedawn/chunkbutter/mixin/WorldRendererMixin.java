@@ -26,9 +26,9 @@ import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
 @Mixin(WorldRenderer.class)
 abstract class WorldRendererMixin implements AutoCloseable, SynchronousResourceReloadListener {
-  @Contract(pure = true)
-  @ModifyConstant(method = "setUpTerrain", constant = @Constant(doubleValue = 768.0), allow = 1)
-  private double chunkbutter$reduceMinimumRange(final double range) {
-    return ChunkButter.isEnabled() ? 0.0 : range;
-  }
+	@Contract(pure = true)
+	@ModifyConstant(method = "setUpTerrain", constant = @Constant(doubleValue = 768.0), allow = 1)
+	private double chunkbutter$reduceMinimumRange(final double range) {
+		return ChunkButter.isEnabled() ? 0.0 : range;
+	}
 }

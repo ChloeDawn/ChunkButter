@@ -1,14 +1,14 @@
 buildscript {
-  repositories {
-    mavenCentral()
-    maven {
-      name = 'fabricmc.net'
-      url = 'https://maven.fabricmc.net'
-    }
-  }
-  dependencies {
-    classpath "net.fabricmc:fabric-loom:$loom"
-  }
+	repositories {
+		mavenCentral()
+		maven {
+			name = 'fabricmc.net'
+			url = 'https://maven.fabricmc.net'
+		}
+	}
+	dependencies {
+		classpath "net.fabricmc:fabric-loom:$loom"
+	}
 }
 
 apply plugin: 'java'
@@ -29,27 +29,27 @@ repositories {
 }
 
 dependencies {
-  minecraft "com.mojang:minecraft:$game"
-  mappings "net.fabricmc:yarn:$game+$mappings"
-  modImplementation "net.fabricmc:fabric-loader:$loader"
-  modImplementation "net.fabricmc.fabric-api:fabric-resource-loader-v0:$resourceloader"
-  implementation "com.github.chloedawn:needle:$needle"
-  include "net.fabricmc.fabric-api:fabric-resource-loader-v0:$resourceloader"
+	minecraft "com.mojang:minecraft:$game"
+	mappings "net.fabricmc:yarn:$game+$mappings"
+	modImplementation "net.fabricmc:fabric-loader:$loader"
+	modImplementation "net.fabricmc.fabric-api:fabric-resource-loader-v0:$resourceloader"
+	implementation "com.github.chloedawn:needle:$needle"
+	include "net.fabricmc.fabric-api:fabric-resource-loader-v0:$resourceloader"
 }
 
 processResources {
-  from(sourceSets.main.resources.srcDirs) {
-    expand version: version, refmap: minecraft.refmapName
-  }
+	from(sourceSets.main.resources.srcDirs) {
+		expand version: version, refmap: minecraft.refmapName
+	}
 }
 
 tasks.withType(JavaCompile) {
-  options.compilerArgs += [
-    '-Xlint:all',
-    '-XprintRounds',
-    '-XprintProcessorInfo',
-    '-encoding', 'UTF-8',
-    '-Xmaxerrs', Integer.MAX_VALUE,
-    '-Xmaxwarns', Integer.MAX_VALUE
-  ]
+	options.compilerArgs += [
+		'-Xlint:all',
+		'-XprintRounds',
+		'-XprintProcessorInfo',
+		'-encoding', 'UTF-8',
+		'-Xmaxerrs', Integer.MAX_VALUE,
+		'-Xmaxwarns', Integer.MAX_VALUE
+	]
 }

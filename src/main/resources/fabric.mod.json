@@ -1,40 +1,40 @@
 {
-  "schemaVersion": 1,
-  "id": "chunkbutter",
-  "name": "Chunk Butter",
-  "version": "$version",
-  "description": "Smooths client chunk rebuilding",
-  "environment": "client",
-  "license": "Apache-2.0",
-  "icon": "pack.png",
-  "depends": {
-    "fabricloader": ">=0.6.3",
-    "fabric-resource-loader-v0": ">=0.1.3"
-  },
-  "entrypoints": {
-    "client": [
-      "io.github.chloedawn.chunkbutter.ChunkButter::load"
-    ]
-  },
-  "mixins": [
-    "mixins/chunkbutter/mixins.json"
-  ],
-  "authors": [
-    {
-      "name": "Chloe Dawn",
-      "contact": {
-        "homepage": "https://git.io/Jen3g"
-      }
-    }
-  ],
-  "contact": {
-    "homepage": "https://git.io/Je89Y",
-    "sources": "https://git.io/Je89Y",
-    "issues": "https://git.io/Je89O"
-  },
-  "custom": {
-    "mm:early_risers": [
-      "io.github.chloedawn.chunkbutter.optifine.OptiFineMixinLoader"
-    ]
-  }
+	"schemaVersion": 1,
+	"id": "chunkbutter",
+	"name": "Chunk Butter",
+	"version": "$version",
+	"description": "Smooths client chunk rebuilding",
+	"environment": "client",
+	"license": "Apache-2.0",
+	"icon": "pack.png",
+	"depends": {
+		"fabricloader": ">=0.6.3",
+		"fabric-resource-loader-v0": ">=0.1.3"
+	},
+	"entrypoints": {
+		"client": [
+			"io.github.chloedawn.chunkbutter.ChunkButter::load"
+		]
+	},
+	"mixins": [
+		"mixins/chunkbutter/mixins.json"
+	],
+	"authors": [
+		{
+			"name": "Chloe Dawn",
+			"contact": {
+				"homepage": "https://git.io/Jen3g"
+			}
+		}
+	],
+	"contact": {
+		"homepage": "https://git.io/Je89Y",
+		"sources": "https://git.io/Je89Y",
+		"issues": "https://git.io/Je89O"
+	},
+	"custom": {
+		"mm:early_risers": [
+			"io.github.chloedawn.chunkbutter.optifine.OptiFineMixinLoader"
+		]
+	}
 }

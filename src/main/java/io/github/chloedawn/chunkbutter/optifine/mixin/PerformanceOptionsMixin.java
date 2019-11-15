@@ -30,17 +30,17 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Pseudo
 @Mixin(targets = "net.optifine.gui.GuiPerformanceSettingsOF", remap = false)
 abstract class PerformanceOptionsMixin extends Screen {
-  @Shadow private static Option[] enumOptions;
+	@Shadow private static Option[] enumOptions;
 
-  PerformanceOptionsMixin() {
-    super(null);
-  }
+	PerformanceOptionsMixin() {
+		super(null);
+	}
 
-  @Inject(method = "Lnet/optifine/gui/GuiPerformanceSettingsOF;init()V", at = @At("TAIL"))
-  private void chunkbutter$appendOption(final CallbackInfo ci) {
-    final int i = enumOptions.length;
-    final int x = this.width / 2 - 155 + i % 2 * 160;
-    final int y = this.height / 6 + 21 * (i / 2) - 12;
-    this.addButton(ChunkButter.getOption().createButton(MinecraftClient.getInstance().options, x, y, 150));
-  }
+	@Inject(method = "Lnet/optifine/gui/GuiPerformanceSettingsOF;init()V", at = @At("TAIL"))
+	private void chunkbutter$appendOption(final CallbackInfo ci) {
+		final int i = enumOptions.length;
+		final int x = this.width / 2 - 155 + i % 2 * 160;
+		final int y = this.height / 6 + 21 * (i / 2) - 12;
+		this.addButton(ChunkButter.getOption().createButton(MinecraftClient.getInstance().options, x, y, 150));
+	}
 }
