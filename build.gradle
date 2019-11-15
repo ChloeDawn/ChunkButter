@@ -1,10 +1,7 @@
 buildscript {
 	repositories {
 		mavenCentral()
-		maven {
-			name = 'fabricmc.net'
-			url = 'https://maven.fabricmc.net'
-		}
+		maven { url 'https://maven.fabricmc.net' }
 	}
 	dependencies {
 		classpath "net.fabricmc:fabric-loom:$loom"
@@ -18,22 +15,19 @@ archivesBaseName = rootProject.name
 group = 'io.github.chloedawn'
 version = mod
 sourceCompatibility = JavaVersion.VERSION_1_8
+
 minecraft.refmapName = "mixins/$namespace/refmap.json"
 
 repositories {
-	jcenter()
-	maven {
-		name = 'jitpack'
-		url = 'https://jitpack.io'
-	}
+	maven { url 'https://jitpack.io' }
 }
 
 dependencies {
 	minecraft "com.mojang:minecraft:$game"
 	mappings "net.fabricmc:yarn:$game+$mappings"
+	implementation "com.github.chloedawn:needle:$needle"
 	modImplementation "net.fabricmc:fabric-loader:$loader"
 	modImplementation "net.fabricmc.fabric-api:fabric-resource-loader-v0:$resourceloader"
-	implementation "com.github.chloedawn:needle:$needle"
 	include "net.fabricmc.fabric-api:fabric-resource-loader-v0:$resourceloader"
 }
 
@@ -43,13 +37,14 @@ processResources {
 	}
 }
 
-tasks.withType(JavaCompile) {
-	options.compilerArgs += [
+compileJava.options.with {
+	it.compilerArgs.addAll(
 		'-Xlint:all',
 		'-XprintRounds',
 		'-XprintProcessorInfo',
-		'-encoding', 'UTF-8',
 		'-Xmaxerrs', Integer.MAX_VALUE,
 		'-Xmaxwarns', Integer.MAX_VALUE
-	]
+	)
+	it.encoding = 'UTF-8'
+	it.fork = true
 }
