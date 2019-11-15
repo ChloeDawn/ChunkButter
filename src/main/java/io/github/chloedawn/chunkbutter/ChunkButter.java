@@ -34,7 +34,7 @@ import java.util.Properties;
 
 public final class ChunkButter {
 	private static final Logger LOGGER = LogManager.getLogger();
-	private static final Path CHUNKBUTTER_TXT = Paths.get("chunkbutter.txt");
+	private static final Path FILE = Paths.get("chunkbutter.txt");
 	private static final String ENABLED = "enabled";
 
 	private static boolean loaded = false;
@@ -74,18 +74,18 @@ public final class ChunkButter {
 	}
 
 	private static void readPropertiesFromFile() {
-		LOGGER.debug("Reading properties from {}", CHUNKBUTTER_TXT);
+		LOGGER.debug("Reading properties from {}", FILE);
 
 		final Properties properties = new Properties();
 
-		try (final Reader reader = Files.newBufferedReader(CHUNKBUTTER_TXT)) {
+		try (final Reader reader = Files.newBufferedReader(FILE)) {
 			properties.load(reader);
 		} catch (final NoSuchFileException e) {
 			writePropertiesToFile();
 		} catch (final IOException e) {
-			throw new RuntimeException("Reading properties from " + CHUNKBUTTER_TXT, e);
+			throw new RuntimeException("Reading properties from " + FILE, e);
 		} catch (final IllegalArgumentException e) {
-			LOGGER.error("Malformed properties in {}", CHUNKBUTTER_TXT, e);
+			LOGGER.error("Malformed properties in {}", FILE, e);
 			writePropertiesToFile();
 		}
 
@@ -93,16 +93,16 @@ public final class ChunkButter {
 	}
 
 	private static void writePropertiesToFile() {
-		LOGGER.debug("Writing properties to {}", CHUNKBUTTER_TXT);
+		LOGGER.debug("Writing properties to {}", FILE);
 
 		final Properties properties = new Properties();
 
 		properties.setProperty(ENABLED, Boolean.toString(enabled));
 
-		try (final Writer writer = Files.newBufferedWriter(CHUNKBUTTER_TXT)) {
+		try (final Writer writer = Files.newBufferedWriter(FILE)) {
 			properties.store(writer, null);
 		} catch (final IOException e) {
-			throw new RuntimeException("Writing properties to " + CHUNKBUTTER_TXT, e);
+			throw new RuntimeException("Writing properties to " + FILE, e);
 		}
 	}
 
