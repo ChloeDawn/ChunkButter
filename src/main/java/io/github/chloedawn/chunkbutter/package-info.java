@@ -16,3 +16,5 @@
 
 @NonNullByDefault
 package io.github.chloedawn.chunkbutter;
+
+import io.github.chloedawn.needle.NonNullByDefault;
